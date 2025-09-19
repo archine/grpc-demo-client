@@ -1,0 +1,4 @@
+gin-plus:
+  server:
+    name: GrpcClient
+    port: 8081
