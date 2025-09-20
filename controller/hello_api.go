@@ -27,7 +27,7 @@ func (h *HelloController) SetRoutes(router *gin.RouterGroup) {
 func (h *HelloController) SayHello(ctx *gin.Context) {
 	name := ctx.Query("name")
 
-	apiCtx, cancelFunc := context.WithTimeout(ctx, 3*time.Second)
+	apiCtx, cancelFunc := context.WithTimeout(ctx, 1*time.Second)
 	defer cancelFunc()
 
 	response, err := h.helloClient.SayHello(apiCtx, &hello.HelloRequest{Name: name})

@@ -31,4 +31,5 @@ func (g *GrpcClientListener) OnContainerRefreshBefore(ctx app.ApplicationContext
 	}
 
 	ctx.RegisterBean("helloClient", hello.NewHelloServiceClient(conn), reflect.TypeFor[hello.HelloServiceClient]())
+	// 可以继续注册当前 grpc服务端的其他 client
 }

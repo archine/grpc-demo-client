@@ -1,4 +1,8 @@
 gin-plus:
   server:
     name: GrpcClient
-    port: 8081
+    port: 4006
+
+etcd:
+  endpoints:
+    - "127.0.0.1:2379"

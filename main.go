@@ -11,7 +11,8 @@ func main() {
 	ginplus.New().
 		With(
 			ginplus.WithEvent(
-				listener.NewGrpcClientListener(),
+				//listener.NewGrpcClientListener(),
+				listener.NewGrpcEtcdClientListener(),
 			),
 		).
 		Run(ginplus.ServerMode)
