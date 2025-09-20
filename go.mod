@@ -2,7 +2,10 @@ module grpc-demo-client
 
 go 1.24
 
-require github.com/archine/gin-plus/v4 v4.1.9
+require (
+	github.com/archine/gin-plus/v4 v4.1.9
+	go.etcd.io/etcd/client/v3 v3.6.5
+)
 
 require (
 	github.com/coreos/go-semver v0.3.1 // indirect
@@ -12,13 +15,12 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3 // indirect
 	go.etcd.io/etcd/api/v3 v3.6.5 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.6.5 // indirect
-	go.etcd.io/etcd/client/v3 v3.6.5 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20250707201910-8d1bb00bc6a7 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250707201910-8d1bb00bc6a7 // indirect
 )
 
 require (
-	github.com/archine/grpc-demo-proto v0.0.1
+	github.com/archine/grpc-demo-proto v0.0.2
 	github.com/bytedance/sonic v1.13.3 // indirect
 	github.com/bytedance/sonic/loader v0.3.0 // indirect
 	github.com/cloudwego/base64x v0.1.5 // indirect

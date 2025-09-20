@@ -7,6 +7,7 @@ import (
 	"github.com/archine/gin-plus/v4/app"
 	"github.com/archine/gin-plus/v4/component/gplog"
 	"github.com/archine/grpc-demo-proto/hello"
+	"github.com/archine/grpc-demo-proto/user"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -31,5 +32,6 @@ func (g *GrpcClientListener) OnContainerRefreshBefore(ctx app.ApplicationContext
 	}
 
 	ctx.RegisterBean("helloClient", hello.NewHelloServiceClient(conn), reflect.TypeFor[hello.HelloServiceClient]())
+	ctx.RegisterBean("userClient", user.NewUserServiceClient(conn), reflect.TypeFor[user.UserServiceClient]())
 	// 可以继续注册当前 grpc服务端的其他 client
 }

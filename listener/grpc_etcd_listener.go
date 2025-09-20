@@ -8,6 +8,7 @@ import (
 	"github.com/archine/gin-plus/v4/app"
 	"github.com/archine/gin-plus/v4/component/gplog"
 	"github.com/archine/grpc-demo-proto/hello"
+	"github.com/archine/grpc-demo-proto/user"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/naming/resolver"
 	"google.golang.org/grpc"
@@ -82,6 +83,7 @@ func newTestServerConn(ctx app.ApplicationContext, builder gresolver.Builder) {
 	}
 
 	ctx.RegisterBean("helloClient", hello.NewHelloServiceClient(conn), reflect.TypeFor[hello.HelloServiceClient]())
+	ctx.RegisterBean("userClient", user.NewUserServiceClient(conn), reflect.TypeFor[user.UserServiceClient]())
 	// ... 注册本 gRPC 服务里其他的客户端Bean
 
 	gplog.Info("Init grpc client success, connected to testServer")
